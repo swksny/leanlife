@@ -1,0 +1,21 @@
+h1{
+  color: #0088cc;
+}
+
+.full {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* background-color:#E6FFE9	; */
+  background-size:cover;
+}
+
+.memos{
+  margin-bottom:20px;
+}
+
+.memo_title {
+  font-size: 20px;
+  background-color: #0088cc;
+  color: white;
+}
