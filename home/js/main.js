@@ -1,7 +1,35 @@
 $(function($){
-	$('#top').on('click',function(){
+	$('#heder-top').on('click',function(){
 		const welcome = $('#welcome').offset().top;
 		$("html").animate({scrollTop: welcome});
+	});
+});
+
+$(function($){
+	$('#heder-profile').on('click',function(){
+		const profile = $('#profile').offset().top;
+		$("html").animate({scrollTop: profile});
+	});
+});
+
+$(function($){
+	$('#heder-portfolio').on('click',function(){
+		const portfolio = $('#portfolio').offset().top;
+		$("html").animate({scrollTop: portfolio});
+	});
+});
+
+$(function($){
+	$('#heder-contact').on('click',function(){
+		const contact = $('#contact').offset().top;
+		$("html").animate({scrollTop: contact});
+	});
+});
+
+$(function($){
+	$('#heder-children').on('click',function(){
+		const children = $('#my-children').offset().top;
+		$("html").animate({scrollTop: children});
 	});
 });
 
@@ -18,7 +46,7 @@ var myChart1 = new Chart(ctxFront, {
 			// データライン
 			borderColor: 'rgba(238, 151, 164)',
 			borderWidth: 2,
-			backgroundColor: 'rgba(246, 228, 231,0.7)',
+			backgroundColor: 'rgba(238, 151, 164,0.3)',
 			pointBackgroundColor:'rgba(238, 151, 164)',
 		}],
 	},
@@ -42,10 +70,10 @@ var myChart2 = new Chart(ctxBack, {
 			label: 'バックエンド',
 			data: [1, 2, 3, 4, 5],
 			// データライン
-			borderColor: 'rgba(170, 255, 255)',
+			borderColor: 'rgba(121, 198, 182)',
 			borderWidth: 2,
-			backgroundColor: 'rgba(170, 255, 255,0.7)',
-			pointBackgroundColor:'rgba(170, 255, 255)',
+			backgroundColor: 'rgba(121, 198, 182, 0.3)',
+			pointBackgroundColor:'rgba(121, 198, 182)',
 		}],
 	},
 	// options:{
@@ -68,10 +96,10 @@ var myChart3 = new Chart(ctxOther, {
 			label: 'その他スキル',
 			data: [1, 2, 3, 4, 5],
 			// データライン
-			borderColor: 'rgba(138, 199, 90)',
+			borderColor: 'rgba(248, 195, 92)',
 			borderWidth: 2,
-			backgroundColor: 'rgba(138, 199, 90,0.7)',
-			pointBackgroundColor:'rgba(138, 199, 90)',
+			backgroundColor: 'rgba(248, 195, 92, 0.3)',
+			pointBackgroundColor:'rgba(248, 195, 92)',
 		}],
 	},
 	// options:{

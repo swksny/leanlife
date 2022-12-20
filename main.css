@@ -4,11 +4,10 @@ body {
     display: grid;
     grid-template:
         "header header header " 5.0rem
-        ".....  ...... ...... " 2.0rem
         ".....  center  .....  " 1fr
         ".....  ...... ...... " 2.0rem
         "footer footer footer " 10.5rem
-        /3.0rem 1fr 3.0rem;
+        /0rem 1fr 0rem;
 }
 
 main {
@@ -17,7 +16,7 @@ main {
     display: grid;
     grid-template:
         "welcome  "
-        "About-me " 10.0rem
+        "About-me "
         "portfolio" 
         "work     " 
         "contact  " 10.0rem
@@ -130,9 +129,9 @@ footer {
     grid-template:
         "..... ..... ..... ..... ....." 2.0rem
         "..... work1 ..... work2 ....." 12.0rem
-        "..... ..... ..... ..... ....." 2.0rem
+        "..... ..... ..... ..... ....." 5.0rem
         "..... work3 ..... work4 ....." 12.0rem
-        "..... ..... ..... ..... ....." 2.0rem
+        "..... ..... ..... ..... ....." 5.0rem
         /auto 20.0rem 3.0rem 20.0rem auto;
 }
 
@@ -148,6 +147,18 @@ footer {
     margin: 0;
 }
 
+.work3 {
+    grid-area: work3;
+    padding: 0;
+    margin: 0;
+}
+
+.work4 {
+    grid-area: work4;
+    padding: 0;
+    margin: 0;
+}
+
 .chart{
     width: 318;
     height: 318;
@@ -155,4 +166,8 @@ footer {
 
 .header-pointer{
     cursor:pointer;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
 }
