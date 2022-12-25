@@ -1,17 +1,19 @@
+html { font-size: 62.5%; }
+
 body {
-    font-size: 1.0rem;
+    font-size: 2.0rem;
     margin: 0;
     display: grid;
     grid-template:
-        "header header header " 5.0rem
-        ".....  center  .....  " 1fr
-        ".....  ...... ...... " 2.0rem
-        "footer footer footer " 10.5rem
+        "header header header " 8.0rem
+        "center  center  center " 1fr
+        ".....  ...... ...... " 5.0rem
+        "footer footer footer " 20.0rem
         /0rem 1fr 0rem;
 }
 
 main {
-    font-size: 1.0rem;
+    font-size: 2.0rem;
     margin: 0;
     display: grid;
     grid-template:
@@ -19,8 +21,16 @@ main {
         "About-me "
         "portfolio" 
         "work     " 
-        "contact  " 10.0rem
-}
+        "contact  " 20.0rem
+
+        /* "..... welcome ....."
+        "..... About-me  ....."
+        "..... portfolio ....." 
+        "..... work      ....." 
+        "..... contact  ..... " 20.0rem */
+        /* /0rem auto 0rem; */
+        
+    }
 
 main {
     grid-area: center;
@@ -37,18 +47,34 @@ header {
     grid-area: header;
     /* background-color: #f7f6f5; */
     position: fixed;
-    height:5.0rem;
+    height:8.0rem;
     width: 100%;
-    background-color: rgba(247,246,245,0.5);
+    background-color: rgba(220,220,220,0.5);
 }
 header li{
     display: inline-block;
-    font-size: 1.0rem;
-    margin: 0 1.0rem 0 1.0rem ;
+    font-size: 2.0rem;
+    margin: 0 2.0rem 0 2.0rem ;
 }
 
 .welcome{
+    grid-area:welcome;
     min-height: 100vh;
+}
+
+
+#profile{
+    /* grid-area:about-me; */
+}
+#portfolio{
+    /* grid-area:portfolio; */
+}
+
+#my-children{
+    /* grid-area:work; */
+}
+#contact{
+    /* grid-area:contact; */
 }
 
 .item-center {
@@ -92,21 +118,18 @@ footer {
     color: aliceblue;
 }
 
-.welcom{
-    height: 10;
-}
-
 .title{
-    font-size: 5.0rem;
+    font-size: 10.0rem;
+    /* color:RGB(230, 230, 230); */
 }
 
 .title2{
-    font-size: 2.0rem;
+    font-size: 7.0rem;
 }
 
 .photo {
-    width: 20.0rem;
-    height: 12.0rem;
+    width: 100%;
+    height: 100%;
     background-size:cover;
 }
 
@@ -128,13 +151,13 @@ footer {
     display: grid;
     grid-template:
         "..... ..... ..... ..... ....." 2.0rem
-        "..... work1 ..... work2 ....." 12.0rem
-        "..... ..... ..... ..... ....." 5.0rem
-        "..... work3 ..... work4 ....." 12.0rem
-        "..... ..... ..... ..... ....." 5.0rem
-        /auto 20.0rem 3.0rem 20.0rem auto;
+        "..... work1 ..... work2 ....." 25.0rem
+        "..... ..... ..... ..... ....." 9.0rem
+        "..... work3 ..... work4 ....." 25.0rem
+        "..... ..... ..... ..... ....." 2.0rem
+        /14.25rem 1fr 10.0rem 1fr 14.25rem;
 }
-
+/* 285 */
 .work1 {
     grid-area: work1;
     padding: 0;
@@ -170,4 +193,9 @@ footer {
 
 .dropdown:hover>.dropdown-menu {
     display: block;
+}
+
+.section{
+    width:114.0rem;
+    background-color: rgb(255, 255, 255);
 }

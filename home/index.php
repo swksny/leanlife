@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="../main.css">
 
 	</head>
-	<body>
+	<body style="background-color:rgba(247,246,245);">
 		<?php
 			include('../private/include.php');
 		?>
@@ -27,8 +27,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="about-me" id="profile">
-				<div class="center">
+			<div class="profile" id="profile">
+				<div class="section center" style="">
 					<p class="title2">profile</p>
 					<div style="margin-bottom:1.0rem;">
 						簡単に要約すると、営業職2年・社内SE2年目の1社4年目経験の社会人です。<br>
@@ -36,7 +36,7 @@
 						教えていただいたことはどんどん実行し、失敗してもめげずに挑戦し続けます。<br>
 						<br>
 						簡単に私についてまとめましたので、ご覧ください。
-					</div>
+					</div>about-me
 					<div>
 						2012年 高校：サイエンス創造科(理数よりの普通科) →理数が得意で、比較的家からも近かったので入学<br>
 						2015年 大学：経営学部に入学 →将来の選択肢が多いと思い入学<br>
@@ -48,52 +48,65 @@
 			</div>
 			<div class="portfolio center" id="portfolio">
 				<p class="title2">portfolio</p>
-				<div class="center" style="display:flex;">
-					<div>
-						<canvas id="skillFrontChart" width="300rem" height="300rem"></canvas>
+				<div class="section">
+					<div class="center" style="display:flex;">
+						<div style="margin:1.0rem;">
+							<p>phpの開発がメインでした</p>
+							<canvas id="skillFrontChart" width="360rem" height="320rem"></canvas>
+						</div>
+						<div style="margin:1.0rem;">
+							<p>phpの開発がメインでした</p>
+							<canvas id="skillBackChart" width="360rem" height="320rem"></canvas>
+						</div>
+						<div style="margin:1.0rem;">
+							<p>eclipseでソースコード管</p>
+							<canvas id="otherSkill" width="360rem" height="320rem"></canvas>
+						</div>
 					</div>
-					<div>
-						<canvas id="skillBackChart" width="300rem" height="300rem"></canvas>
-					</div>
-					<div>
-						<canvas id="otherSkill" width="300rem" height="300rem"></canvas>
+					<div class="center">
+						<div style="border:2px solid #808080; width:80.0rem; padding:2.0rem 1.5rem; margin:3.0rem 0;">
+							5 - エキスパート：<br>
+							4 - 上級：技術責任者として、他のメンバーに教えることができる<br>
+							3 - 中級：実務レベルで自由に駆使できる<br>
+							2 - 初級：多少複雑なプログラムでも自力構築できるが、もう少し習熟が必要<br>
+							1 - エントリー：単純なプログラムであれば、自力構築できる。軽く使用した程度
+						</div>
 					</div>
 				</div>
 			</div>
-			<div id="my-children" class="work">
-				<div class="title2">
-					<div class="center">我が子たち</div>
+			<div id="my-children" class="work center">
+				<div class="title2">我が子たち</div>
+				<div class="section">
 					<div class="my-works">
-						<div class="work1">
-							<div class="photo" style="background-image:url(../CharacterConversion.png);">
-								<a class ="link" href="https://leanlife.sakura.ne.jp/home/CharacterConversion/"></a>
+							<div class="work1">
+								<div class="photo" style="background-image:url(../CharacterConversion.png);">
+									<a class ="link" href="https://leanlife.sakura.ne.jp/home/CharacterConversion/"></a>
+								</div>
+								<p class="work-name">言語カタカナ変換</p>
 							</div>
-							<p class="work-name">言語カタカナ変換</p>
-						</div>
-						<div class="work2">
-							<div class="photo" style="background-image:url(../LeanLife.png);">
-								<a class ="link" href="https://leanlife.sakura.ne.jp/home"></a>
+							<div class="work2">
+								<div class="photo" style="background-image:url(../LeanLife.png);">
+									<a class ="link" href="https://leanlife.sakura.ne.jp/home"></a>
+								</div>
+								<p class="work-name">ポートフォリオサイト</p>
 							</div>
-							<p class="work-name">ポートフォリオサイト</p>
-						</div>
-						<div class="work3">
-							<div class="photo" style="background-color:black;">
-								<a class ="link" href=""></a>
+							<div class="work3">
+								<div class="photo" style="background-color:black;">
+									<a class ="link" href=""></a>
+								</div>
+								<p class="work-name">フォルダ複製ツール</p>
 							</div>
-							<p class="work-name">フォルダ複製ツール</p>
-						</div>
-						<div class="work4">
-							<div class="photo" style="background-color:black;">
-								<a class ="link" href=""></a>
+							<div class="work4">
+								<div class="photo" style="background-color:black;">
+									<a class ="link" href=""></a>
+								</div>
+								<p class="work-name">googleLike</p>
 							</div>
-							<p class="work-name">googleLike</p>
-						</div>
 					</div>
-
 				</div>
 			</div>
 			<div class="contact" id="contact">
-
+				aaaaaaaa
 			</div>
 		</main>
 		<?php include_once('./footer.html'); ?>

@@ -6,10 +6,10 @@ include_once('./top.php');
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <title>JavaScript Basics</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>JavaScript Basics</title>
 </head>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgc3NQBNTBuvSGXNWuI77b5pbuLDgNysQ&language=ja&region=JP&callback=initMap&libraries=places"></script>
@@ -156,7 +156,7 @@ include_once('./top.php');
 
 		//♦︎textSearch()
 		document.getElementById('search').addEventListener('click', function() {
-        	service = new google.maps.places.PlacesService(map);
+			service = new google.maps.places.PlacesService(map);
 			service.textSearch({
 				location: tokyo,
 				radius: '500',
