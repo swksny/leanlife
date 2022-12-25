@@ -39,7 +39,7 @@ var ctxFront = document.getElementById('skillFrontChart');
 var myChart1 = new Chart(ctxFront, {
 	type: 'radar',
 	data: {
-		labels: ['html', 'css', 'javascript', 'jquery', 'smarty'],
+		labels: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Smarty'],
 		datasets: [{
 			label: 'フロントエンド',
 			data: [2, 2, 2, 1, 2],
@@ -68,7 +68,7 @@ var ctxBack = document.getElementById('skillBackChart');
 var myChart2 = new Chart(ctxBack, {
 	type: 'radar',
 	data: {
-		labels: ['php', 'python', 'Selenium', 'postgresql', 'aws'],
+		labels: ['PHP', 'Python', 'Selenium', 'PostgreSQL', 'AWS'],
 		datasets: [{
 			label: 'バックエンド',
 			data: [2, 1, 1, 3, 1],

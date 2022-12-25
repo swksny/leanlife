@@ -17,11 +17,15 @@ main {
     margin: 0;
     display: grid;
     grid-template:
-        "welcome  "
-        "About-me "
-        "portfolio" 
-        "work     " 
-        "contact  " 20.0rem
+        "welcome   "
+        ".....     " 
+        "About-me  "
+        ".....     "
+        "portfolio "
+        ".....     " 
+        "work      "
+        ".....     " 
+        "contact   "
 
         /* "..... welcome ....."
         "..... About-me  ....."
@@ -150,11 +154,11 @@ footer {
     margin: 0;
     display: grid;
     grid-template:
-        "..... ..... ..... ..... ....." 2.0rem
+        "..... ..... ..... ..... ....." 4.0rem
         "..... work1 ..... work2 ....." 25.0rem
         "..... ..... ..... ..... ....." 9.0rem
         "..... work3 ..... work4 ....." 25.0rem
-        "..... ..... ..... ..... ....." 2.0rem
+        "..... ..... ..... ..... ....." 6.0rem
         /14.25rem 1fr 10.0rem 1fr 14.25rem;
 }
 /* 285 */
@@ -196,6 +200,7 @@ footer {
 }
 
 .section{
-    width:114.0rem;
+    width:130.0rem;
+    padding:1.0rem;
     background-color: rgb(255, 255, 255);
 }

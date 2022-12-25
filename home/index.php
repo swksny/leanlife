@@ -27,9 +27,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="profile" id="profile">
-				<div class="section center" style="">
-					<p class="title2">profile</p>
+			<div class="profile center" id="profile">
+				<p class="title2">profile</p>
+				<div class="section center">
 					<div style="margin-bottom:1.0rem;">
 						簡単に要約すると、営業職2年・社内SE2年目の1社4年目経験の社会人です。<br>
 						長所は、切り替えとキャッチアップの速さです。<br>
@@ -47,11 +47,11 @@
 				</div>
 			</div>
 			<div class="portfolio center" id="portfolio">
-				<p class="title2">portfolio</p>
-				<div class="section">
+				<p class="title2">skill</p>
+				<div class="section center">
 					<div class="center" style="display:flex;">
 						<div style="margin:1.0rem;">
-							<p>phpの開発がメインでした</p>
+							<p>SmartyでPHPの値を受け渡し、表示しておりました</p>
 							<canvas id="skillFrontChart" width="360rem" height="320rem"></canvas>
 						</div>
 						<div style="margin:1.0rem;">
@@ -64,18 +64,18 @@
 						</div>
 					</div>
 					<div class="center">
-						<div style="border:2px solid #808080; width:80.0rem; padding:2.0rem 1.5rem; margin:3.0rem 0;">
-							5 - エキスパート：<br>
-							4 - 上級：技術責任者として、他のメンバーに教えることができる<br>
-							3 - 中級：実務レベルで自由に駆使できる<br>
-							2 - 初級：多少複雑なプログラムでも自力構築できるが、もう少し習熟が必要<br>
+						<div style="border:2px solid #808080; width:100.0rem; padding:2.0rem 1.5rem; margin:3.0rem 0;">
+							5 - エキスパート：言語を使うだけでなく、その言語のライブラリやフレームワークを作ることもできる<br>
+							4 - 上級：他のメンバーに教えることができる<br>
+							3 - 中級：リファレンスをみなくても、実務レベルで自由に駆使できる<br>
+							2 - 初級：多少複雑なプログラムでもリファレンスがあれば自力構築できるが、もう少し習熟が必要<br>
 							1 - エントリー：単純なプログラムであれば、自力構築できる。軽く使用した程度
 						</div>
 					</div>
 				</div>
 			</div>
 			<div id="my-children" class="work center">
-				<div class="title2">我が子たち</div>
+				<div class="title2">my-children</div>
 				<div class="section">
 					<div class="my-works">
 							<div class="work1">
@@ -105,8 +105,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="contact" id="contact">
-				aaaaaaaa
+			<div class="contact center" id="contact">
+				<p class="title">Contact</p>
+				<div class="section">
+					ここに連絡フォームを作る
+				</div>
 			</div>
 		</main>
 		<?php include_once('./footer.html'); ?>
