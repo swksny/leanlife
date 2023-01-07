@@ -1,0 +1,346 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2.0rem;
+    margin: 0;
+    display: grid;
+    grid-template:
+        "header header header " 8.0rem
+        "center  center  center " 1fr
+        ".....  ...... ...... " 5.0rem
+        "footer footer footer " 20.0rem
+        /0rem 1fr 0rem;
+}
+
+main {
+    font-size: 2.0rem;
+    margin: 0;
+    display: grid;
+    grid-template:
+        "welcome   "
+        ".....     "
+        "About-me  "
+        ".....     "
+        "portfolio "
+        ".....     "
+        "work      "
+        ".....     "
+        "contact   "
+
+        /* "..... welcome ....."
+        "..... About-me  ....."
+        "..... portfolio ....." 
+        "..... work      ....." 
+        "..... contact  ..... " 20.0rem */
+        /* /0rem auto 0rem; */
+
+}
+
+main {
+    grid-area: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* nav {
+    grid-area: left;
+}
+aside {
+    grid-area: right;
+} */
+header {
+    grid-area: header;
+    /* background-color: #f7f6f5; */
+    position: fixed;
+    height: 8.0rem;
+    width: 100%;
+    background-color: rgba(220, 220, 220, 0.5);
+    z-index: 10;
+}
+
+header li {
+    display: inline-block;
+    font-size: 2.0rem;
+    margin: 0 2.0rem 0 2.0rem;
+}
+
+.welcome {
+    grid-area: welcome;
+    min-height: 100vh;
+}
+
+
+#profile {
+    /* grid-area:about-me; */
+}
+
+#portfolio {
+    /* grid-area:portfolio; */
+}
+
+#my-children {
+    /* grid-area:work; */
+}
+
+#contact {
+    /* grid-area:contact; */
+}
+
+.item-center {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.crescent-moon {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: -7px 0px 0px 5px #FFF450;
+    /*横軸の位置、縦軸の位置、広がり、太さ */
+}
+
+
+.header-container {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    place-items: center;
+    height: 100%;
+}
+
+.center {
+    display: grid;
+    place-items: center;
+}
+
+.welcom-page {
+    /* height: 20.0rem; */
+    background-color: #f5f5dc;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #2b2b2b;
+    color: aliceblue;
+}
+
+.title {
+    font-size: 10.0rem;
+    /* color:RGB(230, 230, 230); */
+}
+
+.title2 {
+    font-size: 7.0rem;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.work-name {
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+
+.my-works {
+    font-size: 1.0rem;
+    margin: 0;
+    display: grid;
+    grid-template:
+        "..... ..... ..... ..... ....." 4.0rem
+        "..... work1 ..... work2 ....." 25.0rem
+        "..... ..... ..... ..... ....." 9.0rem
+        "..... work3 ..... work4 ....." 25.0rem
+        "..... ..... ..... ..... ....." 6.0rem
+        /14.25rem 1fr 10.0rem 1fr 14.25rem;
+}
+
+/* 285 */
+.work1 {
+    grid-area: work1;
+    padding: 0;
+    margin: 0;
+    position:  relative;
+}
+
+.work2 {
+    grid-area: work2;
+    padding: 0;
+    margin: 0;
+    position:  relative;
+}
+
+.work3 {
+    grid-area: work3;
+    padding: 0;
+    margin: 0;
+    position:  relative;
+}
+
+.work4 {
+    grid-area: work4;
+    padding: 0;
+    margin: 0;
+    position:  relative;
+}
+
+.chart {
+    width: 318;
+    height: 318;
+}
+
+.header-pointer {
+    cursor: pointer;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.section {
+    width: 130.0rem;
+    padding: 1.0rem;
+    background-color: rgb(255, 255, 255);
+}
+
+/*
+* Animation Sytling
+*
+*/
+/* CSS Loaders */
+/**
+ * Copyright (c) 2016 Connor Atherton
+ *
+ * All animations must live in their own file
+ * in the animations directory and be included
+ * here.
+ *
+ */
+/**
+ * Styles shared by multiple animations
+ */
+/**
+ * Dots
+ */
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1.5s;
+    background-color:  rgb(255, 255, 255);
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.loaded{
+    pointer-events:none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.my-works > div{
+    transition:all 0.3s ease;
+    cursor:pointer;
+}
+
+.my-works > div:hover{
+    transform:scale(1.1);
+}
+
+.my-works > div::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.my-works > div:hover::before{
+    background-color:rgba(0, 0, 0, 0.4);
+    box-shadow:0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1);
+    border-color: transparent;
+}
+
+@-webkit-keyframes ball-scale {
+    0% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+    100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; } }
+
+@keyframes ball-scale {
+    0% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+    100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; } }
+
+.ball-scale > div {
+    background-color: rgb(0, 0, 0);
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    -webkit-animation: ball-scale 1s 0s ease-in-out infinite;
+            animation: ball-scale 1s 0s ease-in-out infinite; }
+
+.ball-scale-random {
+    width: 37px;
+    height: 40px; }
+    .ball-scale-random > div {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    position: absolute;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    -webkit-animation: ball-scale 1s 0s ease-in-out infinite;
+            animation: ball-scale 1s 0s ease-in-out infinite; }
+    .ball-scale-random > div:nth-child(1) {
+        margin-left: -7px;
+        -webkit-animation: ball-scale 1s 0.2s ease-in-out infinite;
+                animation: ball-scale 1s 0.2s ease-in-out infinite; }
+    .ball-scale-random > div:nth-child(3) {
+        margin-left: -2px;
+        margin-top: 9px;
+        -webkit-animation: ball-scale 1s 0.5s ease-in-out infinite;
+                animation: ball-scale 1s 0.5s ease-in-out infinite; }
+
+/* TODO 一旦ここだが変更する */
+.ball-scale {
+    z-index: 2;
+}

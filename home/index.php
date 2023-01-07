@@ -5,7 +5,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="../main.css">
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/animation-template.css">
 
 	</head>
 	<body style="background-color:rgba(247,246,245);">
@@ -13,15 +14,19 @@
 			include('../private/include.php');
 		?>
 		<main>
-			<div class="welcome center" id="welcome" style="background-image:url('./technology-coffee.jpg'); background-size:cover; ">
+		<div id="loading" class="loader center">
+			<div class="loader-inner ball-scale">
+				<div></div>
+			</div>
+		</div>
+			<div class="welcome center sa sa--lr" id="welcome" style="background-image:url('./technology-coffee.jpg'); background-size:cover; ">
 				<div class="center ">
 					<p class="title">Welcome!</p>
 					<div class="" style="background-color:rgb(255,255,255,0.5); padding:1.5rem; text-align:center;">
 						<p class="">ようこそおいでなすった<br>
 						<br>
 						ここはエンジニアsawashinのポートフォリオサイトです。<br>
-							これまで何を考え、行動し、どのようなスキルを身につけ
-							何を作成したかまとめております。<br>
+							これまでのsawashinの歴史、スキル、考えについてまとめてみました<br>
 							コーヒーと素敵な音楽とご一緒に、ご覧いただけますと幸いです
 						</p>
 					</div>
@@ -36,8 +41,7 @@
 						教えていただいたことはどんどん実行し、失敗してもめげずに挑戦し続けます。<br>
 						<br>
 						簡単に私についてまとめましたので、ご覧ください。
-					</div>about-me
-					<div>
+						<br>
 						2012年 高校：サイエンス創造科(理数よりの普通科) →理数が得意で、比較的家からも近かったので入学<br>
 						2015年 大学：経営学部に入学 →将来の選択肢が多いと思い入学<br>
 						2019年4月 人材紹介会社に営業職として従事 キャリアアドバイザーという職種と裁量が大きくアクティブな社風に興味を持ち入社を決意<br>
@@ -51,7 +55,7 @@
 				<div class="section center">
 					<div class="center" style="display:flex;">
 						<div style="margin:1.0rem;">
-							<p>SmartyでPHPの値を受け渡し、表示しておりました</p>
+							<p>SmartyでPHPの値を受け渡し</p>
 							<canvas id="skillFrontChart" width="360rem" height="320rem"></canvas>
 						</div>
 						<div style="margin:1.0rem;">
@@ -116,5 +120,6 @@
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 		<script src="./js/main.js"></script>
+		<script src="./js/animation-template.js"></script>
 	</body>
 </html>

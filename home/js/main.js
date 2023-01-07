@@ -1,3 +1,9 @@
+window.onload = () => {
+	const loader = document.getElementById('loading');
+	loader.classList.add('loaded');
+};
+
+
 $(function($){
 	$('#heder-top').on('click',function(){
 		const welcome = $('#welcome').offset().top;
