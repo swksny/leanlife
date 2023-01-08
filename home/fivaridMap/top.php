@@ -5,9 +5,9 @@ $target_info_text = '個々の情報を見たい';
 
 
 //DB接続
-$dsn='mysql:dbname=test;host=mysql5.7;charset=utf8';
-$username='root';
-$password = 'root';
+$dsn='mysql:dbname=leanlife;host=mysql5.7;charset=utf8';
+$username='swksny';
+$password = 'Look0990My';
 $driver_options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_EMULATE_PREPARES => false,

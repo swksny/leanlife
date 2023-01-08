@@ -1,6 +1,6 @@
 <?php
-include_once('../config/config.php');
-include_once('./top.php');
+	include_once('./private/conf/config.php');
+	include_once('./top.php');
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ include_once('./top.php');
 	<title>JavaScript Basics</title>
 </head>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgc3NQBNTBuvSGXNWuI77b5pbuLDgNysQ&language=ja&region=JP&callback=initMap&libraries=places"></script>
+<script async defer src=<?= $api; ?> ></script>
 
 <body>
 <div class="full">
@@ -56,7 +56,7 @@ include_once('./top.php');
 
 		//対象のIDを取得、オプションを設定
 		var target = document.getElementById('map');
-		var tokyo = js_array_2;
+		var tokyo = js_array_1;
 
 		//検証用マップ作成
 		var tmp_marker;
@@ -80,6 +80,7 @@ include_once('./top.php');
 		// infoWindow.open(map);
 		
 		//データベースにある情報全て表示
+
 		<?php foreach($new_array as $val):?>
 			var marker_<?= $val['marker_main_sk'] ?> = new google.maps.Marker({
 				position: js_array_<?= $val['marker_main_sk'] ?>,
@@ -251,7 +252,7 @@ include_once('./top.php');
 		// 	});
 		// });
 	}
-	var test = document.getElementById('revu');
+	// var test = document.getElementById('revu');
 
 
 
