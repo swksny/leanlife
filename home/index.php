@@ -22,8 +22,8 @@
 		</div>
 			<div class="welcome center sa sa--lr" id="welcome" style="background-image:url('./technology-coffee.jpg'); background-size:cover; ">
 				<div class="center ">
-					<p class="title">Welcome!</p>
-					<div class="" style="background-color:rgb(255,255,255,0.5); padding:1.5rem; text-align:center;">
+					<p class="title" style="margin-top:10.0rem;">Welcome!</p>
+					<div class="" style="background-color:rgb(255,255,255,0.5); margin-top:3.5rem; padding:1.5rem; text-align:center;">
 						<p class="">ようこそおいでなすった<br>
 						<br>
 						ここはエンジニアsawashinのポートフォリオサイトです。<br>
@@ -32,7 +32,7 @@
 						</p>
 					</div>
 				</div>
-				<a href="#" class="scroll-a"><span class="scroll"></span>Scroll</a>
+				<a href="#" class="scroll-a scroll-profile"><span class="scroll"></span>Scroll</a>
 			</div>
 			<div class="profile center" id="profile">
 				<p class="title2">profile</p>
@@ -112,7 +112,7 @@
 				</div>
 			</div>
 			<div class="contact center" id="contact">
-				<p class="title">Contact</p>
+				<p class="title2">Contact</p>
 				<div class="section">
 					ここに連絡フォームを作る
 				</div>

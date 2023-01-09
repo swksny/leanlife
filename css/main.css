@@ -7,7 +7,7 @@ body {
     margin: 0;
     display: grid;
     grid-template:
-        "header header header " 8.0rem
+        /* "header header header " 8.0rem */
         "center  center  center " 1fr
         ".....  ...... ...... " 5.0rem
         "footer footer footer " 20.0rem
@@ -137,6 +137,7 @@ footer {
 
 .title2 {
     font-size: 7.0rem;
+    margin-top:8.0rem;
 }
 
 .photo {

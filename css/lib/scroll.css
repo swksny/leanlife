@@ -4,10 +4,9 @@
 
 /* 5.矢印×アニメーション #2 */
 .scroll-a {
-	padding-bottom: 0;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
+	padding-top: 8.0rem;
+	position: relative;
+	bottom: -6.0rem;
 	z-index: 2;
 	display: inline-block;
 	-webkit-transform: translate(0, -50%);
@@ -15,18 +14,19 @@
 	text-decoration: none;
 
 	/* 追加 */
-	color:#000;
+	color:#FFF;
+	font-size:3.0rem;
 }
 
 .scroll {
 	position: absolute;
-	top: 0;
+	top: 0rem;
 	left: 50%;
-	width: 2.4rem;
-	height: 2.4rem;
-	margin-left: -1.2rem;
-	border-left: 0.1rem solid #000;
-	border-bottom: 0.1rem solid #000;
+	width: 3.5rem;
+	height: 3.5rem;
+	margin-left: -1.75rem;
+	border-left: 0.2rem solid #FFF;
+	border-bottom: 0.2rem solid #FFF;
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 	-webkit-animation: sdb 1.5s infinite;
@@ -70,8 +70,6 @@
 
 .scroll-a:hover{
 	opacity:50%;
+	color: #FFF;
+	text-decoration:none;
 }
-
-/* .scroll-a:visited{
-    color: inherit;
-} */

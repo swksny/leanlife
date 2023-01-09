@@ -5,35 +5,35 @@ window.onload = () => {
 
 
 $(function($){
-	$('#heder-top').on('click',function(){
+	$('.scroll-top').on('click',function(){
 		const welcome = $('#welcome').offset().top;
 		$("html").animate({scrollTop: welcome});
 	});
 });
 
 $(function($){
-	$('#heder-profile').on('click',function(){
+	$('.scroll-profile').on('click',function(){
 		const profile = $('#profile').offset().top;
 		$("html").animate({scrollTop: profile});
 	});
 });
 
 $(function($){
-	$('#heder-portfolio').on('click',function(){
+	$('.scroll-portfolio').on('click',function(){
 		const portfolio = $('#portfolio').offset().top;
 		$("html").animate({scrollTop: portfolio});
 	});
 });
 
 $(function($){
-	$('#heder-contact').on('click',function(){
+	$('.scroll-contact').on('click',function(){
 		const contact = $('#contact').offset().top;
 		$("html").animate({scrollTop: contact});
 	});
 });
 
 $(function($){
-	$('#heder-children').on('click',function(){
+	$('.scroll-children').on('click',function(){
 		const children = $('#my-children').offset().top;
 		$("html").animate({scrollTop: children});
 	});
