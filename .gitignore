@@ -1,2 +1,5 @@
-#yahooのID
+#yahooのAPIkey情報
 /home/CharacterConversion/private/conf/application.ini
+
+#googleのAPIkey情報
+/home/FivaridMap/private/conf/application.ini

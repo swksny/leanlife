@@ -1,0 +1,77 @@
+/* 
+参考：https://www.nxworld.net/css-scroll-down-button.html
+*/
+
+/* 5.矢印×アニメーション #2 */
+.scroll-a {
+	padding-bottom: 0;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	z-index: 2;
+	display: inline-block;
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	text-decoration: none;
+
+	/* 追加 */
+	color:#000;
+}
+
+.scroll {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 2.4rem;
+	height: 2.4rem;
+	margin-left: -1.2rem;
+	border-left: 0.1rem solid #000;
+	border-bottom: 0.1rem solid #000;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-animation: sdb 1.5s infinite;
+	animation: sdb 1.5s infinite;
+	box-sizing: border-box;
+
+
+}
+
+@-webkit-keyframes sdb {
+	0% {
+		-webkit-transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		-webkit-transform: rotate(-45deg) translate(-20px, 20px);
+		opacity: 0;
+	}
+}
+
+@keyframes sdb {
+	0% {
+		transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: rotate(-45deg) translate(-2.0rem, 2.0rem);
+		opacity: 0;
+	}
+}
+
+.scroll-a:hover{
+	opacity:50%;
+}
+
+/* .scroll-a:visited{
+    color: inherit;
+} */
