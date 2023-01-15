@@ -1,6 +1,5 @@
 <?php
-	include_once('./private/conf/config.php');
-	include_once('./top.php');
+	include_once('./private/include.php');
 ?>
 
 <!DOCTYPE html>

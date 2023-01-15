@@ -1,5 +1,7 @@
 #yahooのAPIkey情報
-/home/CharacterConversion/private/conf/application.ini
+/CharacterConversion/private/conf/application.ini
+/CharacterConversion/private/conf/application.ini.production
 
 #googleのAPIkey情報
-/home/FivaridMap/private/conf/application.ini
+/FivaridMap/private/conf/application.ini
+/FivaridMap/private/conf/application.ini.production
