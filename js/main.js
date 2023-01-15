@@ -3,7 +3,7 @@ window.onload = () => {
 	loader.classList.add('loaded');
 };
 
-
+//scroll
 $(function($){
 	$('.scroll-top').on('click',function(){
 		const welcome = $('#welcome').offset().top;
@@ -39,6 +39,7 @@ $(function($){
 	});
 });
 
+//jQuery
 $(function($){
 	'<?php foreach ($array as $key => $val): ?>';
 var ctxFront = document.getElementById('skillFrontChart');
@@ -128,3 +129,60 @@ var myChart3 = new Chart(ctxOther, {
 	}
 });
 });
+
+//modal
+const modalOpenTriggers = document.getElementsByClassName('modal-open');
+for(const elem of modalOpenTriggers){
+	elem.addEventListener('click', modalOpen);
+}
+function modalOpen(e) {
+	let eIdName = e.target.id.replace('-open','');
+	let openModal = document.getElementById(eIdName);
+	openModal.style.display = 'flex';
+}
+
+const modalCloseTriggers = document.getElementsByClassName('modal-close');
+for(const elem of modalCloseTriggers){
+	elem.addEventListener('click', modalClose);
+}
+function modalClose(e) {
+	let eIdName = e.target.id.replace('-close','');
+	let closeModal = document.getElementById(eIdName);
+	closeModal.style.display = 'none';
+}
+
+addEventListener('click', modalOutsideClose);
+function modalOutsideClose(e) {
+	if (e.target.className.match(/modal-outside-close/)){
+		let closeElement = document.getElementById(e.target.id);
+		closeElement.style.display = 'none';
+	}
+}
+
+// buttonClose.addEventListener('click', modalClose);
+// function modalClose() {
+// 	modalCc.style.display = 'none';
+// }
+
+// const buttonOpen = document.getElementById('modal-open-1');
+// const modalCc = document.getElementById('modal-1');
+// const buttonClose = document.getElementsByClassName('modalClose')[0];
+
+// buttonOpen.addEventListener('click', modalOpen);
+// function modalOpen() {
+// 	modalCc.style.display = 'flex';
+// }
+
+// バツ印がクリックされた時
+// buttonClose.addEventListener('click', modalClose);
+// function modalClose() {
+// 	modalCc.style.display = 'none';
+// }
+
+// モーダルコンテンツ以外がクリックされた時
+// addEventListener('click', outsideClose);
+// function outsideClose(e) {
+// 	if (e.target == modalCc) {
+// 	modalCc.style.display = 'none';
+// 	}
+// }
