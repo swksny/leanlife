@@ -1,0 +1,7 @@
+[URL]
+;繊維先のURL
+CHARACTER_CONVERSION = 'https://leanlife.sakura.ne.jp/CharacterConversion';
+PORT_FOLIO_SITE = 'https://leanlife.sakura.ne.jp/PortfolioSite';
+COPY_FOLDER_TOOL = 'https://leanlife.sakura.ne.jp/CopyFoderTool';
+FIVARID_MAP = 'https://leanlife.sakura.ne.jp/FivaridMap';
+

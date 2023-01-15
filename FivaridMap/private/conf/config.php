@@ -6,16 +6,17 @@ require：require は include とほぼ同じですが、失敗した場合に E
 */
 //こちらを 1 にしておいてあげると、ブラウザのほうにエラー表示をしてくれるので便利かと思います
 
-
 ini_set('dispray_errors',1);
 
-define('BASE_DIR','/var/www/html/home/FivaridMap');
+//全システム共通
+define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/FivaridMap');
+include(DOCUMENT_ROOT.'/private/conf/conf.ini.php');
 
-include(BASE_DIR.'/lib/function.php');
-include(BASE_DIR.'/lib/session.php');
-include(BASE_DIR.'/lib/dao/mainfunction.php');
+include(DOCUMENT_ROOT.'/lib/function.php');
+include(DOCUMENT_ROOT.'/lib/session.php');
+include(DOCUMENT_ROOT.'/lib/dao/mainfunction.php');
 
-$google_api_ini = parse_ini_file(BASE_DIR.'/private/conf/application.ini',true);
+$google_api_ini = parse_ini_file(DOCUMENT_ROOT.'/private/conf/application.ini',true);
 
 $api = "https://maps.googleapis.com/maps/api/js?key=".$google_api_ini['api'] ['GOOGLE_API_KEY']."&language=ja&region=JP&callback=initMap&libraries=places";
 

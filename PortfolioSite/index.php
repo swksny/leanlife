@@ -5,14 +5,14 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="../css/main.css">
-		<link rel="stylesheet" href="../css/animation-template.css">
-		<link rel="stylesheet" href="../css/lib/scroll.css">
+		<link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="./css/animation-template.css">
+		<link rel="stylesheet" href="./css/lib/scroll.css">
 
 	</head>
 	<body style="background-color:rgba(247,246,245);">
 		<?php
-			include('../private/include.php');
+			include('./private/include.php');
 		?>
 		<main>
 		<div id="loading" class="loader center">
@@ -23,11 +23,13 @@
 		<div class="modal add-center modal-outside-close" id="modal-1">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1>お試しタイトル</h1>
+					<h1>日本語カタカナ変換</h1>
 					<span id="modal-1-close"  class="modal-close">×</span>
 				</div>
 				<div>
-					確認用1
+					日本語をカタカナに変換する機能です。
+					
+					<a href="<?= $environment['URL']['CHARACTER_CONVERSION']; ?>">日本語カタカナ変換</a>
 				</div>
 			</div>
 		</div>
@@ -39,6 +41,8 @@
 				</div>
 				<div>
 					確認用2
+
+					<a href="<?= $environment['URL']['PORT_FOLIO_SITE']; ?>">ポートフォリオサイト</a>
 				</div>
 			</div>
 		</div>
@@ -50,6 +54,7 @@
 				</div>
 				<div>
 					確認用3
+					<a href="<?= $environment['URL']['COPY_FOLDER_TOOL'].'/logic.bat'; ?>">ファイル複製ツール</a>
 				</div>
 			</div>
 		</div>
@@ -61,6 +66,7 @@
 				</div>
 				<div>
 					確認用4
+					<a href="<?= $environment['URL']['FIVARID_MAP'];?>">FivaridMap</a>
 				</div>
 			</div>
 		</div>
@@ -141,7 +147,7 @@
 				<div class="section">
 					<div class="my-works">
 							<div class="work1">
-								<div class="photo" style="background-image:url(../CharacterConversion.png);">
+								<div class="photo" style="background-image:url(./img/CharacterConversion.png);">
 									<!-- <a id="modal-open-cc" class ="link" href="https://leanlife.sakura.ne.jp/home/CharacterConversion/"></a> -->
 									<span id="modal-1-open" class ="modal-open link" href=""></span>
 								</div>
@@ -149,21 +155,21 @@
 								<p class="work-name">言語カタカナ変換</p>
 							</div>
 							<div class="work2">
-								<div class="photo" style="background-image:url(../LeanLife.png); background-size:cover;">
+								<div class="photo" style="background-image:url(./img/LeanLife.png); background-size:cover;">
 									<!-- <a class ="link" href="https://leanlife.sakura.ne.jp/home"></a> -->
 									<span id="modal-2-open" class ="modal-open link" href=""></span>
 								</div>
 								<p class="work-name">ポートフォリオサイト</p>
 							</div>
 							<div class="work3">
-								<div class="photo" style="background-image:url(../img/folder.png);">
+								<div class="photo" style="background-image:url(./img/folder.png);">
 									<!-- <a class ="link" href="http://localhost:8080/home/CopyFoderTool/logic.bat"></a> -->
 									<span id="modal-3-open" class ="modal-open link" href=""></span>
 								</div>
 								<p class="work-name">フォルダ複製ツール</p>
 							</div>
 							<div class="work4">
-								<div class="photo" style="background-image:url(../img/google-map.png);">
+								<div class="photo" style="background-image:url(./img/google-map.png);">
 									<!-- <a class ="link" href="http://localhost:8080/home/FivaridMap"></a> -->
 									<span id="modal-4-open" class ="modal-open link" href=""></span>
 								</div>
@@ -182,7 +188,7 @@
 		<?php include_once('./footer.html'); ?>
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-		<script src="../js/main.js"></script>
-		<script src="../js/animation-template.js"></script>
+		<script src="./js/main.js"></script>
+		<script src="./js/animation-template.js"></script>
 	</body>
 </html>
