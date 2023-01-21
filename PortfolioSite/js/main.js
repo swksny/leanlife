@@ -107,7 +107,7 @@ var myChart3 = new Chart(ctxOther, {
 		labels: ['VScode', 'Eclipse', 'Git/GitHub', 'Linux', 'VBA'],
 		datasets: [{
 			label: 'その他スキル',
-			data: [3, 2, 2, 2, 2],
+			data: [2, 2, 2, 2, 2],
 			// データライン
 			borderColor: 'rgba(248, 195, 92)',
 			borderWidth: 2,

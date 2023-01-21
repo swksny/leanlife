@@ -4,9 +4,10 @@
 		<meta charset="utf-8" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
+		<link rel="stylesheet" href="./css/lib/normalize.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="./css/main.css">
-		<link rel="stylesheet" href="./css/animation-template.css">
+		<link rel="stylesheet" href="./css/lib/animation.css">
 		<link rel="stylesheet" href="./css/lib/scroll.css">
 
 	</head>
@@ -26,10 +27,24 @@
 					<h1>日本語カタカナ変換</h1>
 					<span id="modal-1-close"  class="modal-close">×</span>
 				</div>
-				<div>
-					日本語をカタカナに変換する機能です。
-					
-					<a href="<?= $environment['URL']['CHARACTER_CONVERSION']; ?>">日本語カタカナ変換</a>
+				<div class="modal-body">
+					日本語をカタカナに変換する機能です。<br>
+					現職で会社の組織変更対応を担っており、<br>
+					その中での部署名のカタカナを効率よく振るために<br>
+					<a href="https://tool.stabucky.com/convert/kanji2kana.php">既存の外部サイトのツール</a>を参考にYahoo APIを利用して作成してました。<br>
+					本番運用を試みておりますが、現状では改善点が多くある状況です。<br>
+					<br>
+					♦︎既存のツールと比べた改善点<br>
+					・数字、アルファベットも変換される<br>
+					・ひらがなではなくカタカナに変換される<br>
+					・文字数制限がない<br>
+					<!-- <br>
+					♦︎想定される文字列<br>
+					・保育領域 東京第2営業所<br>
+					・ITEMCRA営業所<br>
+					・ヘルスケア&ウェルネス<br> -->
+					<br>
+					→<a href="<?= $environment['URL']['CHARACTER_CONVERSION']; ?>">サイトはこちら</a>
 				</div>
 			</div>
 		</div>
@@ -39,34 +54,49 @@
 					<h1>お試しタイトル</h1>
 					<span id="modal-2-close" class="modal-close">×</span>
 				</div>
-				<div>
-					確認用2
-
-					<a href="<?= $environment['URL']['PORT_FOLIO_SITE']; ?>">ポートフォリオサイト</a>
+				<div class="modal-body">
+					実際に業務で利用したPHP、JSを中心に作成しました。<br>
+					<br>
+					♦︎ポイント<br>
+					・シンプルでわかりやすいデザインを意識<br>
+					・開発環境は独学で身につけたDocker技術での仮想環境の構築<br>
+					・YahhoAPIやGoogleAPIなど、モダンな技術への挑戦<br>
+					<br>
+					♦︎今後について<br>
+					レスポンシブ対応や、セキュリティ対策は必須となるので、<br>
+					まずはこちらから対応していこうと考えてます。<br>
+					やることは膨大にあると認識しております。<br>
+					<br>
+					→<a href="<?= $environment['URL']['PORT_FOLIO_SITE']; ?>">サイトはこちら</a>
 				</div>
 			</div>
 		</div>
 		<div class="modal add-center modal-outside-close" id="modal-3">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1>お試しタイトル</h1>
+					<h1>フォルダ作成ツール</h1>
 					<span id="modal-3-close" class="modal-close">×</span>
 				</div>
-				<div>
-					確認用3
-					<a href="<?= $environment['URL']['COPY_FOLDER_TOOL'].'/logic.bat'; ?>">ファイル複製ツール</a>
+				<div class="modal-body">
+					ディレクリの中身ごと、ある一定の法則に従ってコピーできるツールです。<br>
+					主に現職の特定の業務効率を上げるべく開発しました。<br>
+					<br>
+					→<a href="<?= $environment['URL']['COPY_FOLDER_TOOL'].'/logic.bat'; ?>">ダウンロードはこちら</a>
 				</div>
 			</div>
 		</div>
 		<div class="modal add-center modal-outside-close" id="modal-4">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1>お試しタイトル</h1>
+					<h1>FivaridMap</h1>
 					<span id="modal-4-close" class="modal-close">×</span>
 				</div>
-				<div>
-					確認用4
-					<a href="<?= $environment['URL']['FIVARID_MAP'];?>">FivaridMap</a>
+				<div class="modal-body">
+					知人だけの洗練された口コミサイトをつくりたいと思い、着手。<br>
+					現状の私のスキルでは限界があったため、開発を中断しております。<br>
+					<br>
+					→<a href="<?= $environment['URL']['FIVARID_MAP'];?>">サイトはこちら</a><br>
+					※DBをローカル環境にしか構築していないため、閲覧できません。
 				</div>
 			</div>
 		</div>
@@ -77,7 +107,7 @@
 						<p class="">ようこそ<br>
 						<br>
 							ここは私、エンジニアsawashinのポートフォリオサイトです。<br>
-							私の歴史、スキル、考えについてまとめてみました。<br>
+							私の経歴、スキル、考えについてまとめてみました。<br>
 							コーヒーと素敵な音楽とご一緒に、ご覧いただけますと幸いです。
 						</p>
 					</div>
@@ -92,24 +122,62 @@
 							<img src="./my-photo.JPG" class="img-my-photo" style="display:inline;">
 						</div>
 						<div>
-							●要約<br>
-							営業職(法個人)2年・社内SE2年目の1社4年目経験<br>
-							長所は、切り替えとキャッチアップの速さです。<br>
-							営業で培った定量を追う力を糧に、教えていただいたことはどんどん実行し、<br>
-							失敗してもめげずに挑戦し続けます。<br>
-							<br>
-							●経歴<br>
-							2012年4月：堺市立堺高等学校 高校サイエンス創造科(理数よりの普通科) <br>
-							　　　　　→理数の強みをより伸ばすために選択<br>
-							2015年4月：大阪経済大学 経営学部に入学<br>
-							　　　　　→経営手法や会社について興味があり選択<br>
-							2019年4月：人材紹介会社に営業職として従事<br>
-							　　　　　→キャリアアドバイザーという職種と裁量が大きくアクティブな社風に興味を持ち入社を決意<br>
-							2021年4月：異動希望が叶い社内SEへ<br>
-							　　　　　→持ち前のキャッチアップの速さを生かし、3つの内製システムのメイン担当に任命される<br>
-							現在に至る<br>
-							<br>
-							- GitHub: <a href="https://github.com/swksny">https://github.com/swksny</a>
+							<div class="profile-section">
+								●要約<br>
+								<div class="profile-content">
+									営業職(法個人)2年・社内SE2年目の1社4年目経験です。<br>
+									長所は、切り替えの速さとキャッチアップ力です。<br>
+									営業で培った定量を追う力とメンタルを武器に、教えていただいたことはどんどん実行し、<br>
+									失敗してもめげずに挑戦し続けます。
+								</div>
+							</div>
+							<div class="profile-section">
+								●経歴
+								<div class="profile-content">
+									<!-- 2012年4月：高校入学 サイエンス創造科(理数よりの普通科) <br>
+									　　　　　→理数の強みをより伸ばすために選択<br>
+									2015年4月：大学入学 経営学部に入学<br>
+									　　　　　→経営手法や会社そのものについて興味があり入学<br>
+									2019年4月：人材紹介会社に営業職として従事<br>
+									　　　　　→キャリアアドバイザーという職種と裁量が大きくアクティブな社風に興味を惹かれ入社<br>
+									2021年4月：異動希望が叶い社内SEへ<br>
+									　　　　　→持ち前のキャッチアップ力を生かし、3つの内製システムのメイン担当を任せていただく<br>
+									現在に至る<br> -->
+									<ul class="timeline">
+										<li>
+											<p class="timeline-date">2012年4月</p>
+											<div class="timeline-content">
+												<h2>高校入学 サイエンス創造科(理数よりの普通科)</h2>
+												<p>理数の強みをより伸ばすために選択</p>
+											</div>
+										</li>
+										<li>
+											<p class="timeline-date">2015年4月</p>
+											<div class="timeline-content">
+												<h2>大学入学 経営学部に入学</h2>
+												<p>経済や会社の経営について興味があり入学</p>
+											</div>
+										</li>
+										<li>
+											<p class="timeline-date">2019年4月</p>
+											<div class="timeline-content">
+												<h2>人材紹介会社に営業職として従事</h2>
+												<p>キャリアアドバイザーという職種と裁量が大きくアクティブな社風に興味を惹かれ入社</p>
+											</div>
+										</li>
+										<li>
+											<p class="timeline-date">2021年4月</p>
+											<div class="timeline-content">
+												<h2>異動希望が叶い社内SEへ異動</h2>
+												<p>持ち前のキャッチアップ力を生かし、3つの内製システムのメイン担当を任せていただく</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div>
+								- GitHub: <a href="">※現在、非公開です</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -119,15 +187,16 @@
 				<div class="section center">
 					<div class="center" style="display:flex;">
 						<div style="margin:1.0rem;">
-							<p>SmartyでPHPの値を受け渡し、<br>HTMLで表示してました</p>
+							<p>ほとんどのシステムでは<br>SmartyでPHPの値を受け渡し、<br>HTML/CSSで表示でした。</p>
 							<canvas id="skillFrontChart" width="360rem" height="320rem"></canvas>
 						</div>
 						<div style="margin:1.0rem;">
-							<p>主にPHPの使用で、<br>自動化にはSeleniumを使用しました</p>
+							<p>主にPHPの使用で、<br>Chrome上で動くRPAには<br>PythonのSeleniumを使用しておりました</p>
 							<canvas id="skillBackChart" width="360rem" height="320rem"></canvas>
 						</div>
 						<div style="margin:1.0rem;">
-							<p>Eclipseでのソースコード管理でしたが、<br>Gitの利用を推進しました</p>
+							<!-- SVN、eclipse、さくらエディタが中心に<br>活躍しておりましたが、 -->
+							<p>所属部署ではあまり利用されていない、<br>GitHub・vscode等のモダンな技術に<br>触れることも意識しました</p>
 							<canvas id="otherSkill" width="360rem" height="320rem"></canvas>
 						</div>
 					</div>
