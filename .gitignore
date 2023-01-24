@@ -3,5 +3,8 @@
 /CharacterConversion/private/conf/application.ini.production
 
 #googleのAPIkey情報
-/FivaridMap/private/conf/application.ini
-/FivaridMap/private/conf/application.ini.production
+/FavoriteMap/private/conf/application.ini
+/FavoriteMap/private/conf/application.ini.production
+
+#fivoriteMapのdb情報
+/FavoriteMap/private/conf/db.ini

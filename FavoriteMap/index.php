@@ -8,7 +8,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="style.css">
-	<title>JavaScript Basics</title>
+	<title>FavoriteMap</title>
 </head>
 
 <script async defer src=<?= $api; ?> ></script>

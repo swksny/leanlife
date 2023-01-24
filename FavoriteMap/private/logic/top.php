@@ -3,11 +3,10 @@ $target_info_lat = 35.68082969143581;
 $target_info_lng = 139.77347373962402;
 $target_info_text = '個々の情報を見たい';
 
-
 //DB接続
-$dsn='mysql:dbname=leanlife;host=mysql5.7;charset=utf8';
-$username='swksny';
-$password = 'Look0990My';
+$dsn="mysql:dbname={$dbName};host=mysql5.7;charset=utf8";
+$username=$dbUsername;
+$password = $dbPassword;
 $driver_options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_EMULATE_PREPARES => false,
@@ -27,8 +26,6 @@ $ln_2 = (double)sprintf("%.14f",$result[1]['map_lng']);
 $jsonstr =  json_encode(array('lat'=> $tm, 'lng' => $ln));
 $jsonstr_2 =  json_encode(array('lat'=> $tm_2, 'lng' => $ln_2));
 */
-
-//print_r($result);exit;
 
 $new_array = array();
 foreach($result as $r){

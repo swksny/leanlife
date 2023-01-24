@@ -6,6 +6,7 @@
 	
 	$environment = '';
 	$environment = getEnvironment($_SERVER['SERVER_NAME']);
+	//$environment = getEnvironment(AppConstant::SERVER_NAME_PRODUCTION); //★無理やり本番環境で閲覧したい場合
 	function getEnvironment($SERVER_NAME){
 		if($SERVER_NAME == AppConstant::SERVER_NAME_LOCAL){
 			return parse_ini_file(DOCUMENT_ROOT.'/private/conf/application.ini',true);
