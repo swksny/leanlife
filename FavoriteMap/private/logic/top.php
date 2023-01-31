@@ -4,7 +4,7 @@ $target_info_lng = 139.77347373962402;
 $target_info_text = '個々の情報を見たい';
 
 //DB接続
-$dsn="mysql:dbname={$dbName};host=mysql5.7;charset=utf8";
+$dsn="mysql:host={$dbHost};dbname={$dbName};charset=utf8";
 $username=$dbUsername;
 $password = $dbPassword;
 $driver_options = [
@@ -12,8 +12,13 @@ $driver_options = [
     PDO::ATTR_EMULATE_PREPARES => false,
 	PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ];
+try{
+	$pdo = new PDO($dsn, $username, $password, $driver_options);
+} catch (PDOException $e) {
+	echo 'データベースにアクセスできません！' . $e->getMessage();
+	exit;
+}
 
-$pdo = new PDO($dsn, $username, $password, $driver_options);
 $mainFunction = new mainDaoClass();
 $result = $mainFunction->getMapAllDate($pdo);
 

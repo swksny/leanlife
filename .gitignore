@@ -8,3 +8,4 @@
 
 #fivoriteMapのdb情報
 /FavoriteMap/private/conf/db.ini
+/FavoriteMap/private/conf/db.ini.production

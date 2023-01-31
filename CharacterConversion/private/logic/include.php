@@ -1,16 +1,17 @@
 <?php
-	//全システム共通
-	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/CharacterConversion');
-	include(DOCUMENT_ROOT.'/private/conf/conf.ini.php');
-	
 	//システムごと
-	include(DOCUMENT_ROOT.'/private/logic/mainLogic.php');
-	include(DOCUMENT_ROOT.'/private/logic/common.php');
-
-	$AppConstant = new AppConstant();
+	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT'].'/CharacterConversion');
+	
+	//オートロード
+	include(DOCUMENT_ROOT.'/private/common/Loader.php');
+	$loader = new ClassLoader();
+	$loader->registerDir(DOCUMENT_ROOT.'/private/class');
+	$loader->registerDir(DOCUMENT_ROOT.'/private/class/common');
+	$loader->register();
 	
 	$environment = '';
 	$environment = getEnvironment($_SERVER['SERVER_NAME']);
+	$AppConstant = new AppConstant();
 	function getEnvironment($SERVER_NAME){
 		if($SERVER_NAME == AppConstant::SERVER_NAME_LOCAL){
 			return parse_ini_file(DOCUMENT_ROOT.'/private/conf/application.ini',true);
@@ -23,20 +24,8 @@
 		}
 	}
 
-	// define('SERVER_NAME',$_SERVER['SERVER_NAME'].':8080');
-
-	// $application_ini = appConfSettingFromEnvironment($environment,$AppConstant);
-	// function appConfSettingFromEnvironment($environment,$AppConstant){
-	// 	if($environment == $AppConstant::LOCAL){
-	// 		return parse_ini_file(DOCUMENT_ROOT.'/private/conf/application.ini',true);
-	// 	}elseif($environment == $AppConstant::STAGING){
-	// 		return parse_ini_file(DOCUMENT_ROOT.'/private/conf/application.ini',true);
-	// 	}elseif($environment == $AppConstant::PRODUCTION){
-	// 		return;
-	// 	}else{
-	// 		// define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT']);
-	// 	}
-	// }
-	// print_r();exit; ///★デバック用
-
+	//デバック用
+	function d($v){
+		print_r($v);exit;
+	}
 ?>

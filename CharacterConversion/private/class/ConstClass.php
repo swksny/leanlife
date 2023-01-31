@@ -4,6 +4,7 @@ class ConstClass {
 	CONST REPLACE_WORDS = array(
 		'1課' => 'いっか'
 		,'第1' => 'だいいち'
+		,'WEB'=>'ウェブ'
 		,'A'=>'エー'
 		,'B'=>'ビー'
 		,'C'=>'シー'
