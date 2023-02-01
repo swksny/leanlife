@@ -8,15 +8,17 @@
 			$this->id = $id;
 		}
 
-		public function parsingPost(){
+		public function parsingPost($replaceWords){
 			$Class = new ConstClass();
 	
 			try{
 				//改行「\n」を「'|'」に変換
 				if(isset($_POST['sentence'])){
 					$sentenceVar =  str_replace(array("\r\n","n\r","\n"),'|',$_POST['sentence']);
-					foreach($Class::REPLACE_WORDS as $rep_key=>$rep_val){
-						$sentenceVar = str_replace($rep_key,$rep_val,$sentenceVar);
+					foreach($replaceWords as $replaceWord){
+						if($replaceWord['checked']){
+							$sentenceVar = str_replace($replaceWord['before'],$replaceWord['after'],$sentenceVar);
+						}
 					}
 				}
 			

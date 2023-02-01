@@ -13,8 +13,6 @@
 			}
 			// $tables[array_key_last($tables)] = array_pad($tables[array_key_last($tables)],8,'');
 			return $tables;
-
-
 		}
 	}
 

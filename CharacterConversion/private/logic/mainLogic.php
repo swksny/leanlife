@@ -11,22 +11,56 @@
 	$MainLogic = new MainLogic($environment['api']['YAHHO_API_URL'],$environment['api']['YAHHO_API_ID']);
 	$ChangeCombination = new ChangeCombination();
 	$ConstClass = new ConstClass;
-	$tables = $ChangeCombination->tableCreate($ConstClass::REPLACE_WORDS);
 
-	print_r($ConstClass::REPLACE_WORDS);
-	$session = getSession($ConstClass::REPLACE_WORDS);
-	print_r($session);exit;
+	
+	$replaceWords = array();
+
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){	
+		$session = getSession($ConstClass::REPLACE_WORDS);
+		$replaceWords = $session;
+	}else{
+		$session = getDefaultSession($ConstClass::REPLACE_WORDS);
+		$replaceWords = $session;
+	}
+
+
+
+	// print_r($replaceWords);exit;
+
+	$tables = $ChangeCombination->tableCreate($replaceWords);
 
 	if(isset($_POST['sentence'])){
-		$MainLogic->parsingPost();
+		$MainLogic->parsingPost($replaceWords);
 	}
 	
 	function getSession($words){
 		$session = array();
 		foreach($words as $before =>$after){
 			if(isset($_POST[$after])){
-				$session[$before] = $after;
+				$session[] = array(
+					'before' => $before,
+					'after' => $after,
+					'checked' => true,
+				);
+			}else{
+				$session[] = array(
+					'before' => $before,
+					'after' => $after,
+					'checked' => false,
+				);
 			}
+		}
+		return $session;
+	}
+
+	function getDefaultSession($words){
+		$session = array();
+		foreach($words as $before => $after){
+			$session[] = array(
+				'before' => $before,
+				'after' => $after,
+				'checked' => true,
+			);
 		}
 		return $session;
 	}
@@ -51,18 +85,18 @@
 					<div class="" style="display:flex; ">
 						<?php foreach($tables as $table) : ?>
 							<table style="width:150px; height:200px;">
-							<?php foreach($table as $before => $after) : ?>
+							<?php foreach($table as $val) : ?>
 								<tr>
-									<?php if(empty($after)): ?>
+									<?php if(!isset($val['after'])): ?>
 										<td>　</td>
 										<td>　</td>
 										<td>　</td>
 										<td>　</td>
 									<?php else:?>
-										<td><input type="checkbox" name="<?= $after ?>" value="<?= $before ?>"></td>
-										<td><?= $before; ?></td>
+										<td><input type="checkbox" name="<?= $val['after'] ?>" value="<?= $val['before'] ?>" <?= $val['checked'] ? 'checked':'';?> ></td>
+										<td><?= $val['before']; ?></td>
 										<td>→</td>
-										<td><?= $after; ?></td>
+										<td><?= $val['after']; ?></td>
 									<?php endif ;?>
 								</tr>
 							<?php endforeach; ?>
