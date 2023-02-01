@@ -23,10 +23,6 @@
 		$replaceWords = $session;
 	}
 
-
-
-	// print_r($replaceWords);exit;
-
 	$tables = $ChangeCombination->tableCreate($replaceWords);
 
 	if(isset($_POST['sentence'])){
@@ -79,9 +75,20 @@
 		</div>
 		<div class="main">
 			<form action="" name="sentence" method="post">
-			<section class="chengeCombination" style="margin:1.0rem auto">
-				<div>
-					<div>変換ロジック</div>
+			<section>
+				<h1>概要</h1>
+				<div class="summary" style="margin:0.5rem auto 2.0rem auto">
+					<div class="sentence">
+						1.YahooAPIで漢字をひらがなに変換する<br>
+						2.変換ロジックの組み合わせで置換する ※左上から順番に置換されます<br>
+						3.カタカナに変換する<br>
+
+					</div>
+				</div>
+			</section>
+			<section>
+				<h1>変換ロジック</h1>
+				<div class="changeCombination" style="margin:0.5rem auto 2.0rem auto">
 					<div class="" style="display:flex; ">
 						<?php foreach($tables as $table) : ?>
 							<table style="width:150px; height:200px;">
@@ -106,17 +113,17 @@
 				</div>
 			</section>
 			<section>
-				
+					<h1>日本語の文章</h1>
 					<div>
 						<textarea name="sentence" class="sentence-area"></textarea>
 					</div>
 					<div>
 						<button class="button05"><a>変換する</a></button>
 					</div>
-				
 			</section>
 			</form>	
 			<section>
+				<h1>変換後</h1>
 				<div>
 					<textarea class="result sentence-area" id="result" readonly><?= h($_SESSION['DISPLAY_VAR']); ?></textarea>
 					<p><button id="copy-btn">Copy</button><span id="output"></span></p>
