@@ -7,17 +7,29 @@
 //②post
 //③redirect
 
-session_start();
-require_once('private/logic/include.php');
-$ConstClass = new ConstClass();
+	require_once('private/logic/include.php');
+	$MainLogic = new MainLogic($environment['api']['YAHHO_API_URL'],$environment['api']['YAHHO_API_ID']);
+	$ChangeCombination = new ChangeCombination();
+	$ConstClass = new ConstClass;
+	$tables = $ChangeCombination->tableCreate($ConstClass::REPLACE_WORDS);
 
-$MainLogic = new MainLogic($environment['api']['YAHHO_API_URL'],$environment['api']['YAHHO_API_ID']);
-$ChangeCombination = new ChangeCombination();
-$tables = $ChangeCombination->tableCreate($ConstClass::REPLACE_WORDS);
-var_dump($_POST['check']);exit;
-if(isset($_POST['sentence'])){
-	$MainLogic->parsingPost();
-}
+	print_r($ConstClass::REPLACE_WORDS);
+	$session = getSession($ConstClass::REPLACE_WORDS);
+	print_r($session);exit;
+
+	if(isset($_POST['sentence'])){
+		$MainLogic->parsingPost();
+	}
+	
+	function getSession($words){
+		$session = array();
+		foreach($words as $before =>$after){
+			if(isset($_POST[$after])){
+				$session[$before] = $after;
+			}
+		}
+		return $session;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +59,7 @@ if(isset($_POST['sentence'])){
 										<td>　</td>
 										<td>　</td>
 									<?php else:?>
-										<td><input type="checkbox" name="check[]" value="<?= $before ?>"></td>
+										<td><input type="checkbox" name="<?= $after ?>" value="<?= $before ?>"></td>
 										<td><?= $before; ?></td>
 										<td>→</td>
 										<td><?= $after; ?></td>
