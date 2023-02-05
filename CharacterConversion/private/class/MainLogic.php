@@ -8,13 +8,15 @@
 			$this->id = $id;
 		}
 
-		public function parsingPost($replaceWords){
+		public function parsingPost($replaceWords,$sentence){
 			$Class = new ConstClass();
 	
 			try{
-				//改行「\n」を「'|'」に変換
-				if(isset($_POST['sentence'])){
-					$sentenceVar =  str_replace(array("\r\n","n\r","\n"),'|',$_POST['sentence']);
+				if(isset($sentence) && $sentence != ''){
+					//改行「\n」を「'|'」に変換
+					$sentenceVar = mb_convert_kana($sentence, "rn");
+					$sentenceVar = strtoupper($sentenceVar) ;
+					$sentenceVar = str_replace(array("\r\n","n\r","\n"),'|',$sentenceVar);
 					foreach($replaceWords as $replaceWord){
 						if($replaceWord['checked']){
 							$sentenceVar = str_replace($replaceWord['before'],$replaceWord['after'],$sentenceVar);
@@ -54,19 +56,21 @@
 					//URLの情報を取得する
 					$res =  json_decode(curl_exec($ch));
 			
-					$display_var = '';
+					$displayVar = '';
 					if(isset($res) && $res ==! ''){
 						foreach($res->result->tokens as $var){
-							$display_var .= (str_replace('|',"\n",$var[1]));
+							$displayVar .= (str_replace('|',"\n",$var[1]));
 						}
 						//ひらがなをカタカナに変換
-						$_SESSION['DISPLAY_VAR'] = mb_convert_kana($display_var, "CKs");
-			
-						//セッションを終了する
-						curl_close($ch);
-					}
-					//header('Location: ./index.php');
-					//exit;
+						$displayVar = mb_convert_kana($displayVar, "CKs");
+						
+					}else{
+						$displayVar = '';
+					}					
+					//セッションを終了する
+					curl_close($ch);
+					return $displayVar;
+
 				} catch ( Exception $ex ) {
 					error_log("\n{$ex}",3,$Class::LOG_PASS);
 					return FALSE;

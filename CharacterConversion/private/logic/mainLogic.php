@@ -12,7 +12,9 @@
 	$ChangeCombination = new ChangeCombination();
 	$ConstClass = new ConstClass;
 
-	
+	$IncludeFile = new IncludeFile(DOCUMENT_ROOT.'/private/app/bep-eng.txt',10);
+	$englishReplaceWords = $IncludeFile->execute();
+
 	$replaceWords = array();
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){	
@@ -25,8 +27,15 @@
 
 	$tables = $ChangeCombination->tableCreate($replaceWords);
 
-	if(isset($_POST['sentence'])){
-		$MainLogic->parsingPost($replaceWords);
+	$replaceWords = array_merge($englishReplaceWords,$replaceWords);
+	
+	$sentence = isset($_POST['sentence'])? $_POST['sentence']:'';
+	$displayVar = '';
+	if($sentence != ''){
+		// print_r($sentence);exit;
+		$displayVar = $MainLogic->parsingPost($replaceWords,$sentence);
+	}else{
+		$displayVar = '';
 	}
 	
 	function getSession($words){
@@ -79,9 +88,9 @@
 				<h1>概要</h1>
 				<div class="summary" style="margin:0.5rem auto 2.0rem auto">
 					<div class="sentence">
-						1.YahooAPIで漢字をひらがなに変換する<br>
-						2.変換ロジックの組み合わせで置換する ※左上から順番に置換されます<br>
-						3.カタカナに変換する<br>
+						1.<a href="https://fastapi.metacpan.org/source/MASH/Lingua-JA-Yomi-0.01/lib/Lingua/JA">bep-eng.dic（NVDA 日本語版の辞書）</a>で英語を置換<br>
+						2.カスタムした「変換ロジック」の組み合わせで置換 ※左上から順番に置換される<br>
+						3.YahooAPIで漢字をひらがなに変換<br>
 
 					</div>
 				</div>
@@ -115,7 +124,7 @@
 			<section>
 					<h1>日本語の文章</h1>
 					<div>
-						<textarea name="sentence" class="sentence-area"></textarea>
+						<textarea name="sentence" class="sentence-area"><?= isset($_POST['sentence']) ? $_POST['sentence']:''; ?></textarea>
 					</div>
 					<div>
 						<button class="button05"><a>変換する</a></button>
@@ -125,7 +134,7 @@
 			<section>
 				<h1>変換後</h1>
 				<div>
-					<textarea class="result sentence-area" id="result" readonly><?= h($_SESSION['DISPLAY_VAR']); ?></textarea>
+					<textarea class="result sentence-area" id="result" readonly><?= h($displayVar); ?></textarea>
 					<p><button id="copy-btn">Copy</button><span id="output"></span></p>
 				</div>
 			</section>
