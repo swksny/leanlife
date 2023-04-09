@@ -96,7 +96,7 @@ services:
       - PMA_ARBITRARY=1
       - PMA_HOST=mysql
       - PMA_USER={自由に設定ください}
-      - PMA_PASSWORD={自由記述}
+      - PMA_PASSWORD={自由に設定ください}
     links:
       - mysql
     ports:
