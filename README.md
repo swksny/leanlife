@@ -9,6 +9,7 @@
 「PortfolioSite」内に記載しておりますので、下記URLの「my-children」からご覧ください。  
 <https://leanlife.sakura.ne.jp/PortfolioSite>  
 ※BASIC認証に必要なID・PWはご連絡いただければお伝えします
+※本来、サービスごとにプロジェクトを分けて管理するべきですが、小規模なシステムであることと、共有のしやすさから1つにまとめております
   
   
 ### リポジトリ名について（余談）
