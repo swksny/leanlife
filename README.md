@@ -7,10 +7,11 @@
 
 上記のサービスを作成しようと思い立った理由については、  
 「PortfolioSite」内に記載しておりますので、下記URLの「my-children」からご覧ください。  
-<https://leanlife.sakura.ne.jp/PortfolioSite>
+<https://leanlife.sakura.ne.jp/PortfolioSite>  
+※BASIC認証に必要なID・PWはご連絡いただければお伝えします
   
   
-**リポジトリ名について（余談）**  
+### リポジトリ名について（余談）
 「lean」には"無駄をなくす"という意味があります。  
 
 現在、ITの進歩は著しく、大変便利なツールやサイトが様々用意されており、  
@@ -24,6 +25,7 @@
 # Features
 - 業務上でメインに利用していた言語（PHP、Jquery、JavaScript、HTML、CSS）を扱った
 - 業務外の知識の習得（Docker、GoogleMapAPI、YahooAPI）
+- 単に開発するのではなく、課題に大してIT技術での解決を目的とした
 
 # Requirement
 PHP：7.2  
@@ -32,35 +34,30 @@ jquery：3.6.1
 Chart.bundle.js：2.7.2
 
 # Installation
-### PHP：7.2  
-### mysql：5.7  
+### PHP：7.2、mysql：5.7  
 
-PHP、Apache、MySQL、phpMyAdminをdocker環境で構築してます。
+PHP、Apache、MySQL、phpMyAdminをdocker環境で構築しています。  
+
+#### 環境構築手順
+1. ディレクトリ構成を作る
+1. ターミナルでdocker-compose.ymlのある場所まで移動する
+1. 下記、docker-composeコマンドを実行する
+
+##### terminal（docker-composeコマンド）
+```
+docker-compose up -d
+```
 
 ##### ディレクトリ構成
 ```
 Desktop/docker  
-           ├html  
+           ├leanlife  
            │  └index.php  
            ├php  
            │  ├Dockerfile  
            │  └php.ini  
            ├docker-compose.yml  
            ├my.conf  
-```
-
-###### Dockerfile
-```
-FROM php:7.2-apache
-# PDOを使用できるようにする
-RUN docker-php-ext-install pdo_mysql
-```
-
-###### php/php.ini
-```
-FROM php:7.2-apache
-# PDOを使用できるようにする
-RUN docker-php-ext-install pdo_mysql
 ```
 
 ###### docker-compose.yml
@@ -109,6 +106,29 @@ services:
     container_name: phpmyadmin
 ```
 
+###### my.conf
+```
+[mysqld]
+character-set-server=utf8
+collation-server=utf8_general_ci
+
+[client]
+default-character-set=utf8
+```
+
+###### Dockerfile
+```
+FROM php:7.2-apache
+# PDOを使用できるようにする
+RUN docker-php-ext-install pdo_mysql
+```
+
+###### php/php.ini
+```
+FROM php:7.2-apache
+# PDOを使用できるようにする
+RUN docker-php-ext-install pdo_mysql
+```
 
 ### jquery：3.6.1（CDN）  
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
