@@ -26,6 +26,94 @@
 - 業務外の知識の習得（Docker、GoogleMapAPI、YahooAPI）
 
 # Requirement
-PHP：5.32.1  
+PHP：7.2  
+mysql：5.7  
 jquery：3.6.1  
 Chart.bundle.js：2.7.2
+
+# Installation
+### PHP：7.2  
+### mysql：5.7  
+
+PHP、Apache、MySQL、phpMyAdminをdocker環境で構築してます。
+
+##### ディレクトリ構成
+```
+Desktop/docker  
+           ├html  
+           │  └index.php  
+           ├php  
+           │  ├Dockerfile  
+           │  └php.ini  
+           ├docker-compose.yml  
+           ├my.conf  
+```
+
+###### Dockerfile
+```
+FROM php:7.2-apache
+# PDOを使用できるようにする
+RUN docker-php-ext-install pdo_mysql
+```
+
+###### php/php.ini
+```
+FROM php:7.2-apache
+# PDOを使用できるようにする
+RUN docker-php-ext-install pdo_mysql
+```
+
+###### docker-compose.yml
+```
+version: '3'
+
+services:
+  php:
+    build: ./php
+    volumes:
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./leanlife:/var/www/html
+    ports:
+      - 8080:80
+    container_name: php8.1
+
+  mysql:
+    image: mysql:5.7
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD={自由に設定ください}
+      - MYSQL_DATABASE={自由に設定ください}
+      - MYSQL_USER={自由に設定ください}
+      - MYSQL_PASSWORD={自由に設定ください}
+      - "TZ=Asia/Tokyo"
+    container_name: mysql5.7
+    ports:
+      - "4306:3306"
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER={自由に設定ください}
+      - PMA_PASSWORD={自由記述}
+    links:
+      - mysql
+    ports:
+      - 4040:80
+    volumes:
+      - ./phpmyadmin/sessions:/sessions
+    container_name: phpmyadmin
+```
+
+
+### jquery：3.6.1（CDN）  
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+### Chart.bundle.js：2.7.2（CDN）
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+※CDNに関しては、既にソースコード内に記述されているので、追記の必要はなし
