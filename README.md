@@ -5,7 +5,7 @@
 - CopyFoderTool：フォルダ複製ツール
 - FavoriteMap：GoogleMapAPIを利用した、情報管理ツール　※開発途中
 
-なぜ、上記のサービスを作成しようと考えたのかは、  
+上記のサービスを作成しようと思い立った理由については、  
 「PortfolioSite」内に記載しておりますので、下記URLの「my-children」からご覧ください。  
 <https://leanlife.sakura.ne.jp/PortfolioSite>
   
@@ -26,6 +26,6 @@
 - 業務外の知識の習得（Docker、GoogleMapAPI、YahooAPI）
 
 # Requirement
-PHP：5.32.1
-jquery：3.6.1
+PHP：5.32.1  
+jquery：3.6.1  
 Chart.bundle.js：2.7.2
