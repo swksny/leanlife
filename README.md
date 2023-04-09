@@ -131,9 +131,13 @@ RUN docker-php-ext-install pdo_mysql
 ```
 
 ### jquery：3.6.1（CDN）  
+```
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+```
 
 ### Chart.bundle.js：2.7.2（CDN）
+```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+```
 
 ※CDNに関しては、既にソースコード内に記述されているので、追記の必要はなし
