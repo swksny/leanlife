@@ -126,9 +126,11 @@ RUN docker-php-ext-install pdo_mysql
 
 ###### php/php.ini
 ```
-FROM php:7.2-apache
-# PDOを使用できるようにする
-RUN docker-php-ext-install pdo_mysql
+[Date]
+date.timezone = "Asia/Tokyo"
+[mbstring]
+mbstring.internal_encoding = "UTF-8"
+mbstring.language = "Japanese"
 ```
 
 ### jquery：3.6.1（CDN）  
